@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: consul-client-provider
+  cloud:
+    consul:
+      discovery:
+        instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+        instance-group: ccp
+        metadata:
+          demo: ccp
+          test: 123
+      host: localhost
+      port: 8500
+
+server:
+  port: 2703
+
+management:
+  server:
+    port: 2700
