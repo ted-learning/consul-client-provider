@@ -27,7 +27,7 @@ internal class HelloWorldControllerTest {
             Thread.sleep(1000)
             try {
                 val response = loadBalancedRest.getForObject<Map<String, String>>("/hello")
-                assertThat(response["data"]).isEqualTo("Hello World~")
+                assertThat(response["data"]).isNotEmpty
                 println("$i.succeed")
             } catch (e: Exception) {
                 println("$i.failed")

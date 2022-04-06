@@ -10,6 +10,6 @@ class HelloWorldController {
 
     @GetMapping("/hello")
     fun hello(): Map<String,String>{
-        return mapOf("data" to "Hello World~")
+        return mapOf("data" to "Hello, I'm consul-client-provider")
     }
 }
